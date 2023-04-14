@@ -9,7 +9,6 @@ from jax import jit, vmap
 
 def stack_dict_list(l):
     keys = l[0].keys()
-    print(keys)
     return [jnp.stack([jnp.array(elm[k]).astype(float) for elm in l]) for k in keys]
 
 #@jit
